@@ -68,7 +68,9 @@ variables:
 
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   KUBE_CONTEXT: sakkoub-group/cicd-workshop/main-project:kas-agent-config
-                
+  KUBE_INGRESS_BASE_DOMAIN: "35.189.61.59.nip.io"
+  KUBE_NAMESPACE: "my-ns"
+  DAST_FULL_SCAN_ENABLED: "true"              
 
 
 stages:
