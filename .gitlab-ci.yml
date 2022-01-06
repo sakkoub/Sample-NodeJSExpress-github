@@ -69,11 +69,11 @@ variables:
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   KUBE_CONTEXT: sakkoub-group/cicd-workshop/main-project:kas-agent-config
                 
-  before_script:
-    - echo $KUBECONFIG
-    - cat $KUBECONFIG
-    - kubectl config get-contexts
-    - if [ -n "$KUBE_CONTEXT" ]; then kubectl config use-context "$KUBE_CONTEXT"; fi
+before_script:
+  - echo $KUBECONFIG
+  - cat $KUBECONFIG
+  - kubectl config get-contexts
+  - if [ -n "$KUBE_CONTEXT" ]; then kubectl config use-context "$KUBE_CONTEXT"; fi
 
 stages:
   - build
