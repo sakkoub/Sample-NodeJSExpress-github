@@ -67,6 +67,13 @@ variables:
   ROLLOUT_RESOURCE_TYPE: deployment
 
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+  KUBE_CONTEXT: sakkoub-group/cicd-workshop/main-project:kas-agent-config
+                
+  before_script:
+    - echo $KUBECONFIG
+    - cat $KUBECONFIG
+    - kubectl config get-contexts
+    - if [ -n "$KUBE_CONTEXT" ]; then kubectl config use-context "$KUBE_CONTEXT"; fi
 
 stages:
   - build
@@ -160,6 +167,8 @@ workflow:
     # https://github.com/dokku/buildpack-nginx
     - exists:
         - .static
+
+
 
 # NOTE: These links point to the latest templates for development in GitLab canonical project,
 # therefore the actual templates that were included for Auto DevOps pipelines
