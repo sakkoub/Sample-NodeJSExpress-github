@@ -44,7 +44,7 @@
 # specify a custom buildpack, set a project variable `BUILDPACK_URL` to the
 # repository URL of the buildpack.
 # e.g. BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-ruby.git#v142
-# If you need multiple buildpacks, add a file to your project called
+# If you need multiple buildpacks, add a file to your project called 
 # `.buildpacks` that contains the URLs, one on each line, in order.
 # Note: Auto CI does not work with multiple buildpacks yet
 
@@ -167,9 +167,9 @@ workflow:
         - .static
 
 before_script:
-    - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox'
-    - export KUBE_INGRESS_BASE_DOMAIN="34.151.86.66.nip.io"
-    - export KUBE_NAMESPACE="my-ns"
+  #  - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox'
+  #  - export KUBE_INGRESS_BASE_DOMAIN="34.151.86.66.nip.io"
+  #  - export KUBE_NAMESPACE="my-ns"
     - export DAST_FULL_SCAN_ENABLED="true" 
 
 
