@@ -173,8 +173,8 @@ before_script:
     - export DAST_FULL_SCAN_ENABLED="true" 
 
 review:
-  script:
-    - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox'
+  before_script:
+    - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-autopilot:gke-autopilot'
     - export KUBE_INGRESS_BASE_DOMAIN="34.129.46.226.nip.io"
     - export KUBE_NAMESPACE="my-ns"
     - export DAST_FULL_SCAN_ENABLED="true" 
