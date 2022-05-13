@@ -172,6 +172,12 @@ before_script:
   #  - export KUBE_NAMESPACE="my-ns"
     - export DAST_FULL_SCAN_ENABLED="true" 
 
+review:
+  script:
+    - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox'
+    - export KUBE_INGRESS_BASE_DOMAIN="34.129.46.226.nip.io"
+    - export KUBE_NAMESPACE="my-ns"
+    - export DAST_FULL_SCAN_ENABLED="true" 
 
 # NOTE: These links point to the latest templates for development in GitLab canonical project,
 # therefore the actual templates that were included for Auto DevOps pipelines
