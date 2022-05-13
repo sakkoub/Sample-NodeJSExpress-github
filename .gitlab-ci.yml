@@ -172,7 +172,7 @@ before_script:
   #  - export KUBE_NAMESPACE="my-ns"
     - export DAST_FULL_SCAN_ENABLED="true" 
 
-dast_environment_review:
+dast_environment_deploy:
   before_script:
     - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-autopilot:gke-autopilot'
     - export KUBE_INGRESS_BASE_DOMAIN="34.129.46.226.nip.io"
