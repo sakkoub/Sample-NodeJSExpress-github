@@ -178,6 +178,7 @@ review:
     - export KUBE_INGRESS_BASE_DOMAIN="34.129.46.226.nip.io"
     - export KUBE_NAMESPACE="my-ns"
     - export DAST_FULL_SCAN_ENABLED="true" 
+    - echo "This is review before script"
 
 # NOTE: These links point to the latest templates for development in GitLab canonical project,
 # therefore the actual templates that were included for Auto DevOps pipelines
