@@ -166,7 +166,8 @@ workflow:
     - exists:
         - .static
 
-
+before_script:
+    - export KUBE_CONTEXT='sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox'
 
 # NOTE: These links point to the latest templates for development in GitLab canonical project,
 # therefore the actual templates that were included for Auto DevOps pipelines
