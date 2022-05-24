@@ -67,8 +67,8 @@ variables:
   ROLLOUT_RESOURCE_TYPE: deployment
 
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
-  KUBE_CONTEXT: sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox
-  KUBE_INGRESS_BASE_DOMAIN: "34.151.86.66.nip.io"
+  #KUBE_CONTEXT: sakkoub-group/cicd-workshop/gke-sandbox-cluster:kas-agent-config-sandbox
+  #KUBE_INGRESS_BASE_DOMAIN: "34.151.86.66.nip.io"
   KUBE_NAMESPACE: "my-ns"
   DAST_FULL_SCAN_ENABLED: "true"              
 
