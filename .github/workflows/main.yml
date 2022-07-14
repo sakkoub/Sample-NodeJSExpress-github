@@ -4,7 +4,7 @@ name: containerscanning
 
 on: [push]
 env:
-  CI_REGISTRY_IMAGE: registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress
+  CI_REGISTRY_IMAGE: registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress:latest
   
 jobs:
   build-secure-and-push:
@@ -26,4 +26,4 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: docker login -u "gitlab+deploy-token-1196282" -p "NrUBiH9J9m4VY1k_ocD5" registry.gitlab.com
-    - run: docker push "registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
+    - run: docker push "registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress:latest"
