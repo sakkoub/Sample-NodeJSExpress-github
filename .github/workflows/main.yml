@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: containerscanning
+
+on: [push]
+
+jobs:
+  build-secure-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - run: docker build . -t ${{ env.CONTAINER_REGISTRY }}/k8sdemo:${{ github.sha }}
+      
+    - uses: Azure/container-scan@v0
+      with:
+        image-name: ${{ env.CONTAINER_REGISTRY }}/k8sdemo:${{ github.sha }}
+    
+    - uses: Azure/docker-login@v1
+      with:
+        login-server: ${{ env.CONTAINER_REGISTRY }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    
+    - run: docker push ${{ env.CONTAINER_REGISTRY }}/k8sdemo:${{ github.sha }}
