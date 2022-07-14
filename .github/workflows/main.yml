@@ -10,16 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build . -t ${{ env.CONTAINER_REGISTRY }}/myimage
+    - run: docker build . -t "registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
       
     - uses: Azure/container-scan@v0
       with:
-        image-name: ${{ env.CONTAINER_REGISTRY }}/myimage
+        image-name: "registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
     
     - uses: Azure/docker-login@v1
       with:
-        login-server: ${{ env.CONTAINER_REGISTRY }}
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        login-server: "registry.gitlab.com" # ${{ env.CONTAINER_REGISTRY }}
+        username: "gitlab-ci-token" # ${{ secrets.REGISTRY_USERNAME }}
+        password: "NrUBiH9J9m4VY1k_ocD5"
     
-    - run: docker push ${{ env.CONTAINER_REGISTRY }}/myimage
+    - run: docker push "registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
