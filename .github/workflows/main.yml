@@ -20,8 +20,8 @@ jobs:
     
     - uses: Azure/docker-login@v1
       with:
-        login-server: "registry.gitlab.com" # ${{ env.CONTAINER_REGISTRY }}
-        username: "gitlab+deploy-token-1196282" # ${{ secrets.REGISTRY_USERNAME }}
-        password: "NrUBiH9J9m4VY1k_ocD5"
+        login-server: ${{ env.CONTAINER_REGISTRY }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: docker login -u "gitlab+deploy-token-1196282" -p "NrUBiH9J9m4VY1k_ocD5" registry.gitlab.com
     - run: docker push "registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
