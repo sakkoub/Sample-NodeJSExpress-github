@@ -3,14 +3,16 @@
 name: containerscanning
 
 on: [push]
-
+env:
+  CI_REGISTRY_IMAGE: registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress
+  
 jobs:
   build-secure-and-push:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build --pull -t registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress .
+    - run: docker build --pull -t  ${{ env.CI_REGISTRY_IMAGE }} .
       
     - uses: Azure/container-scan@v0
       with:
