@@ -4,7 +4,7 @@ name: containerscanning
 
 on: [push]
 env:
-  CI_REGISTRY_IMAGE: registry.gitlab.com registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress
+  CI_REGISTRY_IMAGE: registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress
   
 jobs:
   build-secure-and-push:
