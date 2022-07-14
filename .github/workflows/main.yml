@@ -23,5 +23,5 @@ jobs:
         login-server: "registry.gitlab.com" # ${{ env.CONTAINER_REGISTRY }}
         username: "gitlab+deploy-token-1196282" # ${{ secrets.REGISTRY_USERNAME }}
         password: "NrUBiH9J9m4VY1k_ocD5"
-    
+    - run: docker login -u "registry.gitlab.com" -p "NrUBiH9J9m4VY1k_ocD5" registry.gitlab.com
     - run: docker push "registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
