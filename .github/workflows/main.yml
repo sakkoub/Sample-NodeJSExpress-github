@@ -17,6 +17,8 @@ jobs:
     - uses: Azure/container-scan@v0
       with:
         image-name: "registry.gitlab.com/sakkoub-group/cicd-workshop/sample-nodejsexpress"
+        username: "gitlab+deploy-token-1196282"
+        password:  "NrUBiH9J9m4VY1k_ocD5"
     
     - uses: Azure/docker-login@v1
       with:
