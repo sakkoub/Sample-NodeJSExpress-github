@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build --pull -t  '${{ env.CI_REGISTRY_IMAGE }} .
+    - run: docker build --pull -t  '${{ env.CI_REGISTRY_IMAGE }}' .
       
     - uses: Azure/container-scan@v0
       with:
