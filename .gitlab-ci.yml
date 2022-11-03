@@ -17,7 +17,7 @@
 # Test jobs may be disabled by setting environment variables:
 # * test: TEST_DISABLED
 # * code_quality: CODE_QUALITY_DISABLED
-# * license_management: LICENSE_MANAGEMENT_DISABLED 
+# * license_management: LICENSE_MANAGEMENT_DISABLED  
 # * browser_performance: BROWSER_PERFORMANCE_DISABLED
 # * load_performance: LOAD_PERFORMANCE_DISABLED
 # * sast: SAST_DISABLED
